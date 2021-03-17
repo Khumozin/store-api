@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 
 // Import Routes
+const testRoutes = require('./routes/test');
 const authRoutes = require('./routes/auth');
 const brandRoutes = require('./routes/brand');
 const categoryRoutes = require('./routes/category');
@@ -28,9 +29,10 @@ mongoose.connect(
 // Middlewares
 corsOptions = {
     // origin: 'https://ngrx-brands.web.app/',
-    origin: 'https://onlinestoreapp-a2a76.web.app',
+    // origin: 'https://onlinestoreapp-a2a76.web.app',
     // origin: 'https://onlinestoreapp.azurewebsites.net',
     // origin: 'http://localhost:4200',
+    origin: "*",
     optionsSuccessStatus: 200
 };
 
@@ -41,6 +43,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static('./uploads'));
 
 // Route Middlewares
+app.use('/api/test', testRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/brands', brandRoutes);
 app.use('/api/categories', categoryRoutes);
