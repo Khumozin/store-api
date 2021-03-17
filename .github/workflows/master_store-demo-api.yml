@@ -32,5 +32,5 @@ jobs:
       with:
         app-name: 'store-demo-api'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d6c11c980a1949c5b7d909e1ceb7c4e7 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6b71347afe6e46e6815a2b1cd7d31348 }}
         package: .
